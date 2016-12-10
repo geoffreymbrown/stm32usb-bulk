@@ -1,0 +1,80 @@
+Configuration	bulk-example
+STM32CubeMX 	4.17.0
+Date	12/09/2016
+MCU	STM32F303VCTx
+
+
+
+PERIPHERALS	MODES	FUNCTIONS	PINS
+RCC	BYPASS Clock Source	RCC_OSC_IN	PF0-OSC_IN
+SPI3	Half-Duplex Master	SPI3_MOSI	PC12
+SPI3	Half-Duplex Master	SPI3_SCK	PC10
+SYS	Serial Wire	SYS_JTCK-SWCLK	PA14
+SYS	Serial Wire	SYS_JTMS-SWDIO	PA13
+SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
+USB	Device (FS)	USB_DM	PA11
+USB	Device (FS)	USB_DP	PA12
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+1	PE2	GPIO_EXTI2	DRDY [LSM303DLHC_DRDY]
+2	PE3	GPIO_Output	CS_I2C/SPI [L3GD20_CS_I2C/SPI]
+3	PE4	GPIO_EXTI4	MEMS_INT3 [LSM303DLHC_INT1]
+4	PE5	GPIO_EXTI5	MEMS_INT4 [LSM303DLHC_INT2]
+8	PC14-OSC32_IN*	RCC_OSC32_IN	OSC32_IN
+9	PC15-OSC32_OUT*	RCC_OSC32_OUT	OSC32_OUT
+12	PF0-OSC_IN	RCC_OSC_IN	OSC_IN
+13	PF1-OSC_OUT*	RCC_OSC_OUT	OSC_OUT
+23	PA0	GPIO_Input	B1 [Blue PushButton]
+30	PA5*	SPI1_SCK	SPI1_SCK [L3GD20_SCL/SPC]
+31	PA6*	SPI1_MISO	SPI1_MISO [L3GD20_SA0/SDO]
+32	PA7*	SPI1_MOSI	SPI1_MISO [L3GD20_SDA/SDI/SDO]
+39	PE8	GPIO_Output	LD4 [Blue Led]
+40	PE9	GPIO_Output	LD3 [Red Led]
+41	PE10	GPIO_Output	LD5 [Orange Led]
+42	PE11	GPIO_Output	LD7 [Green Led]
+43	PE12	GPIO_Output	LD9 [Blue Led]
+44	PE13	GPIO_Output	LD10 [Red Led]
+45	PE14	GPIO_Output	LD8 [Orange Led]
+46	PE15	GPIO_Output	LD6 [Green Led]
+70	PA11	USB_DM	DM
+71	PA12	USB_DP	DP
+72	PA13	SYS_JTMS-SWDIO	SWDIO
+76	PA14	SYS_JTCK-SWCLK	SWCLK
+78	PC10	SPI3_SCK	tgt_swclk
+79	PC11	GPIO_Output	tgt_nReset
+80	PC12	SPI3_MOSI	tgt_swdio
+89	PB3*	SYS_JTDO-TRACESWO	SWO
+92	PB6*	I2C1_SCL	I2C1_SCL [LSM303DLHC_SCL]
+93	PB7*	I2C1_SDA	I2C1_SDA [LSM303DLHC_SDA]
+97	PE0	GPIO_EXTI0	MEMS_INT1 [L3GD20_INT1]
+98	PE1	GPIO_EXTI1	MEMS_INT2 [L3GD20_DRDY/INT2]
+
+
+
+SOFTWARE PROJECT
+
+Project Settings : 
+Project Name : bulk-example
+Project Folder : /Users/geobrown/stm32cubef3bulk/bulk-example
+Toolchain / IDE : Other Toolchains (GPDSC)
+Firmware Package Name and Version : STM32Cube FW_F3 V1.6.0
+
+
+Code Generation Settings : 
+STM32Cube Firmware Library Package : Copy only the necessary library files
+Generate peripheral initialization as a pair of '.c/.h' files per peripheral : Yes
+Backup previously generated files when re-generating : No
+Delete previously generated files when not re-generated : Yes
+Set all free pins as analog (to optimize the power consumption) : No
+
+
+Toolchains Settings : 
+Compiler Optimizations : Balanced Size/Speed
+
+
+
+
+
+
