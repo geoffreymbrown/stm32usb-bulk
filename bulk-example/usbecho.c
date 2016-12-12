@@ -67,7 +67,7 @@ int main(void)
 	int res;
 	size_t size = strlen(buf) + 1;
 	if ((t = libusb_bulk_transfer(handle,
-				      0x01, (unsigned char *) buf,
+				      0x02, (unsigned char *) buf,
 				      size,
 				      &res,
 				      3000))) {
@@ -77,7 +77,7 @@ int main(void)
 	printf("sent  %d bytes of %zu \n", res, size);
 	if (!(res & 63)){ // send zlp
 	  libusb_bulk_transfer(handle,
-			       0x01, (unsigned char *) buf,
+			       0x02, (unsigned char *) buf,
 			       0,
 			       &res,
 			       3000);

@@ -41,7 +41,7 @@ static int Dequeue(struct Queue *q, uint8_t *data, uint32_t len){
 int8_t Receive_FS (uint8_t* Buf, uint32_t *Len){
   int count = *Len;
 
-  if (*Len && (Enqueue(&rxQ, Buf, *Len) != *Len)) {
+  if (*Len && ((Enqueue(&rxQ, Buf, *Len) != *Len))) {
     // Shouldn't happen ! this is an overflow
   }
 

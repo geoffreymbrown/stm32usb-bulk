@@ -208,8 +208,12 @@ USBD_StatusTypeDef  USBD_LL_Init (USBD_HandleTypeDef *pdev)
   HAL_PCDEx_PMAConfig((PCD_HandleTypeDef*)pdev->pData, 0x00, PCD_SNG_BUF, 0x18);
   HAL_PCDEx_PMAConfig((PCD_HandleTypeDef*)pdev->pData, 0x80, PCD_SNG_BUF, 0x58);
   // Data
-  HAL_PCDEx_PMAConfig((PCD_HandleTypeDef*)pdev->pData, 0x81, PCD_SNG_BUF, 0xC0);  
-  HAL_PCDEx_PMAConfig((PCD_HandleTypeDef*)pdev->pData, 0x01, PCD_SNG_BUF, 0x110);
+  HAL_PCDEx_PMAConfig((PCD_HandleTypeDef*)pdev->pData,
+		      BULK_IN_EP,
+		      PCD_SNG_BUF, 0xC0);  
+  HAL_PCDEx_PMAConfig((PCD_HandleTypeDef*)pdev->pData, 
+		      BULK_OUT_EP, 
+		      PCD_SNG_BUF, 0x110);
   // was control interface for cdc
   //  HAL_PCDEx_PMAConfig((PCD_HandleTypeDef*)pdev->pData , 0x82 , PCD_SNG_BUF, 0x100);  
   return USBD_OK;

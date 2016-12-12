@@ -9,7 +9,7 @@
 #include  "usbd_ioreq.h"
 
 #define BULK_IN_EP                        0x81  /* EP1 for data IN */
-#define BULK_OUT_EP                       0x01  /* EP1 for data OUT */
+#define BULK_OUT_EP                       0x02  /* EP1 for data OUT */
 
 
 /* BULK Endpoints parameters: you can fine tune these values depending on the needed baudrates and performance. */
